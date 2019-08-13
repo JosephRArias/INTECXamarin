@@ -16,6 +16,32 @@ namespace LoginXamarin
 		public MainPage()
 		{
 			InitializeComponent();
+			
+		}
+		async void VerifyData(Object ob, EventArgs arg)
+		{
+			
+			if (EmailEntry.Text != null && PasswordEntry.Text != null)
+			{
+				ShowMessage();
+			}
+			else if (EmailEntry.Text == null && PasswordEntry.Text != null)
+			{
+				await DisplayAlert("Error", "El campo Email no puede estar vacio", "Ok");
+			}
+			else if (EmailEntry.Text != null && PasswordEntry.Text == null)
+			{
+				await DisplayAlert("Error", "El campo Password no puede estar vacio", "Ok");
+			}
+			else
+			{
+				await DisplayAlert("Error", "Ninguno de los campos puede estar vacio", "Ok");
+			}
+		}
+		public void ShowMessage()
+		{
+			var user = "Hola " + EmailEntry.Text;
+			DisplayAlert("Bienvenido", user, "Ok");
 		}
 	}
 }
