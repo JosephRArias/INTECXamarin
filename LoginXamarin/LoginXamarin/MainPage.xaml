@@ -9,10 +9,11 @@
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="CenterAndExpand" >
         <!-- Place new controls here -->
-        <Label Text="Welcome to my Login Page" />
+        <Image Source="login.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"></Image>
+        <Label Text="Welcome to my Login Page" VerticalOptions="Center" HorizontalOptions="Center"/>
         <Entry Placeholder="Email" x:Name="EmailEntry"></Entry>
         <Entry Placeholder="Password" x:Name="PasswordEntry" IsPassword="True"></Entry>
-        <Button BackgroundColor="LightBlue" Text="Iniciar Sesion" TextColor="White"></Button>    
+        <Button BackgroundColor="LightBlue" Text="Iniciar Sesion" TextColor="White" Clicked="VerifyData"></Button>    
     </StackLayout>
 
 </ContentPage>
