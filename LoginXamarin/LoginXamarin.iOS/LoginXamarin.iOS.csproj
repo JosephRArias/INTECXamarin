@@ -134,4 +134,7 @@
       <Name>LoginXamarin</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\login.png" />
+  </ItemGroup>
 </Project>

@@ -20,28 +20,26 @@ namespace LoginXamarin
 		}
 		async void VerifyData(Object ob, EventArgs arg)
 		{
-			
-			if (EmailEntry.Text != null && PasswordEntry.Text != null)
+			if (string.IsNullOrEmpty(NameEntry.Text) && string.IsNullOrEmpty(PasswordEntry.Text))
 			{
-				ShowMessage();
+				await DisplayAlert("Error", "Ninguno de los campos puede estar vacio", "Ok");
 			}
-			else if (EmailEntry.Text == null && PasswordEntry.Text != null)
+			else if (string.IsNullOrEmpty(NameEntry.Text) && !string.IsNullOrEmpty(PasswordEntry.Text))
 			{
-				await DisplayAlert("Error", "El campo Email no puede estar vacio", "Ok");
+				await DisplayAlert("Error", "El campo Name no puede estar vacio", "Ok");
 			}
-			else if (EmailEntry.Text != null && PasswordEntry.Text == null)
+			else if (!string.IsNullOrEmpty(NameEntry.Text) && string.IsNullOrEmpty(PasswordEntry.Text))
 			{
 				await DisplayAlert("Error", "El campo Password no puede estar vacio", "Ok");
 			}
 			else
 			{
-				await DisplayAlert("Error", "Ninguno de los campos puede estar vacio", "Ok");
+				ShowMessage();
 			}
 		}
-		public void ShowMessage()
+		async void ShowMessage()
 		{
-			var user = "Hola " + EmailEntry.Text;
-			DisplayAlert("Bienvenido", user, "Ok");
+			await DisplayAlert("Bienvenido", $"Hola, {NameEntry.Text}", "Ok");
 		}
 	}
 }
