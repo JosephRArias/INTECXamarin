@@ -134,4 +134,7 @@
       <Name>ExtraPointsPractice</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_info.png" />
+  </ItemGroup>
 </Project>
