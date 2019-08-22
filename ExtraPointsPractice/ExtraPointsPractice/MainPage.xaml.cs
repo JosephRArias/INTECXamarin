@@ -17,5 +17,9 @@ namespace ExtraPointsPractice
 		{
 			InitializeComponent();
 		}
+		async void GoHome(object obj, EventArgs args)
+		{
+			await Navigation.PushAsync(new HomePage());
+		}
 	}
 }

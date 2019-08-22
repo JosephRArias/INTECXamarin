@@ -6,11 +6,10 @@
              mc:Ignorable="d"
              x:Class="ExtraPointsPractice.MainPage">
 
-    <StackLayout>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Label Text="Welcome to Xamarin.Forms!" />
+        <Button Text="Go to Home Page" Clicked="GoHome"></Button>
     </StackLayout>
 
 </ContentPage>
