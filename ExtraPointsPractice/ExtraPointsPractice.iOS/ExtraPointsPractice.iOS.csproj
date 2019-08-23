@@ -137,4 +137,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_info.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_cloud_queue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_location_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_radio.png" />
+  </ItemGroup>
 </Project>

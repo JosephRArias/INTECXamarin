@@ -6,16 +6,78 @@
              mc:Ignorable="d"
              x:Class="ExtraPointsPractice.HomePage">
     <NavigationPage.TitleView>
-        <AbsoluteLayout VerticalOptions="CenterAndExpand" BackgroundColor="White">
+        <AbsoluteLayout VerticalOptions="CenterAndExpand">
             <Label Text="Your Logo" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.3,10,100,60" VerticalOptions="Center"></Label>
             <Button Image="ic_info" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1,0,40,50"></Button>
         </AbsoluteLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <Grid HorizontalOptions="CenterAndExpand"
+                  VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition Height="0.2*"></RowDefinition>
+                    <RowDefinition Height="0.2*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="0.2*"></RowDefinition>
+                    <RowDefinition Height="0.2*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Here you can place your own awesome image"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       Grid.ColumnSpan="2"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start"></Label>
+                <Button ImageSource="ic_cloud_queue.png"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.RowSpan="3"
+                        BackgroundColor="Gray"></Button>
+                <Label Text="Weather"
+                       VerticalTextAlignment="End"
+                       HorizontalTextAlignment="Center"
+                       Grid.Column="0"
+                       Grid.Row="3"
+                       ></Label>
+                <Button ImageSource="ic_location_on.png"
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Grid.RowSpan="3"
+                        BackgroundColor="Gray"></Button>
+                <Label Text="Location"
+                       VerticalTextAlignment="End"
+                       HorizontalTextAlignment="Center"
+                       Grid.Column="1"
+                       Grid.Row="3"></Label>
+                <Button ImageSource="ic_people.png"
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        Grid.RowSpan="3"
+                        BackgroundColor="Gray"></Button>
+                <Label Text="Crew"
+                       VerticalTextAlignment="End"
+                       HorizontalTextAlignment="Center"
+                       Grid.Column="0"
+                       Grid.Row="6"></Label>
+                <Button ImageSource="ic_radio.png"
+                        Grid.Column="1"
+                        Grid.Row="4"
+                        Grid.RowSpan="3"
+                        BackgroundColor="Gray"></Button>
+                <Label Text="Radio"
+                       VerticalTextAlignment="End"
+                       HorizontalTextAlignment="Center"
+                       Grid.Column="1"
+                       Grid.Row="6"></Label>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
