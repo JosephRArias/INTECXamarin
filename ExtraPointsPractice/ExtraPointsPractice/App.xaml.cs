@@ -10,7 +10,7 @@ namespace ExtraPointsPractice
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new MainPage());
+			MainPage = new NavigationPage(new MainPage()) { BackgroundColor=Color.White, BarTextColor=Color.White};
 		}
 
 		protected override void OnStart()
