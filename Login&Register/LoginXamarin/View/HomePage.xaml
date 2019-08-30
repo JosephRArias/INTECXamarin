@@ -6,7 +6,9 @@
              mc:Ignorable="d"
              x:Class="LoginXamarin.View.HomePage">
   <!--Pages can be added as references or inline-->
-  <ContentPage Title="Home" />
-  <ContentPage Title="Option 1" />
-  <ContentPage Title="Option 2" />
+    <TabbedPage.Children>
+        <ContentPage Title="Home" IconImageSource="ic_home.png"></ContentPage>
+        <ContentPage Title="Profile" IconImageSource="ic_assignment_ind.png"></ContentPage>
+        <ContentPage Title="Settings" IconImageSource="ic_settings.png"></ContentPage>
+    </TabbedPage.Children>
 </TabbedPage>

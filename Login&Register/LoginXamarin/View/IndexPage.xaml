@@ -7,7 +7,20 @@
             xmlns:local1="clr-namespace:LoginXamarin.View"
             mc:Ignorable="d"
              x:Class="LoginXamarin.View.IndexPage">
-  <!--Pages can be added as references or inline-->
-    <local1:LoginPage Title="Tab 1"></local1:LoginPage>
-    <ContentPage Title="Tab 2"></ContentPage>
+    <TabbedPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="BorderColor" Value="Black"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </TabbedPage.Resources>
+    <!--Pages can be added as references or inline-->
+    <TabbedPage.Children>
+        <local1:LoginPage Title="Login" IconImageSource="ic_accessibility_new.png" BackgroundColor="White"></local1:LoginPage>
+        <ContentPage IconImageSource="ic_settings.png" Title="Tab 2"></ContentPage>
+    </TabbedPage.Children>
 </TabbedPage>

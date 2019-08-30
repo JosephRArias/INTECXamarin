@@ -13,7 +13,7 @@
             <Entry Placeholder="Username" Text="{Binding userModel.Username}"></Entry>
             <Entry Placeholder="Password" Text="{Binding userModel.Password}" IsPassword="True"></Entry>
             <Entry Placeholder="ConfirmPassword" Text="{Binding cpassword}" IsPassword="True"></Entry>
-            <Button Text="Guardar" Command="{Binding SaveCommand}" BackgroundColor="DarkBlue"></Button>
+            <Button Text="Guardar" Command="{Binding SaveCommand}" BackgroundColor="DarkBlue" TextColor="White"></Button>
             <Label Text="{Binding ErrorIdentified}" x:Name="ValidationLabel" TextColor="Red"></Label>
         </StackLayout>
     </ContentPage.Content>
