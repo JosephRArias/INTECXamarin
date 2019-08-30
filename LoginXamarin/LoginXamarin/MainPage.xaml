@@ -15,6 +15,9 @@
             <Entry Placeholder="Name" x:Name="NameEntry"></Entry>
             <Entry Placeholder="Password" x:Name="PasswordEntry" IsPassword="True"></Entry>
             <Button BackgroundColor="DarkBlue" Text="Iniciar Sesion" TextColor="White" Clicked="VerifyData"></Button>
+            <Label TextColor ="Blue" Text="Register" Style="Underlined">
+                <Label.GestureRecognizers Tapped="OnTapGestureRegister"></Label.GestureRecognizers>
+            </Label>
         </StackLayout>
     </ScrollView>
 </ContentPage>

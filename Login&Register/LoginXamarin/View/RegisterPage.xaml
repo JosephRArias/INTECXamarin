@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginXamarin.View.RegisterPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+            <Image Source="login.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"></Image>
+            <Label Text="Please provide these information to register" TextColor="Black" FontAttributes="Bold"></Label>
+            <Entry Placeholder="Name" Text="{Binding userModel.Name}"></Entry>
+            <Entry Placeholder="Username" Text="{Binding userModel.Username}"></Entry>
+            <Entry Placeholder="Password" Text="{Binding userModel.Password}" IsPassword="True"></Entry>
+            <Entry Placeholder="ConfirmPassword" Text="{Binding cpassword}" IsPassword="True"></Entry>
+            <Button Text="Guardar" Command="{Binding SaveCommand}" BackgroundColor="DarkBlue"></Button>
+            <Label Text="{Binding ErrorIdentified}" x:Name="ValidationLabel" TextColor="Red"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

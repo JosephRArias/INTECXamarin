@@ -41,5 +41,9 @@ namespace LoginXamarin
 		{
 			await DisplayAlert("Bienvenido", $"Hola, {NameEntry.Text}", "Ok");
 		}
+		async void OnTapGestureRegister(Object ob, EventArgs eventArgs)
+		{
+			await Navigation.PushAsync(new RegisterPage());
+		}
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginXamarin.View;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace LoginXamarin
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+			MainPage = new NavigationPage(new IndexPage());
 		}
 
 		protected override void OnStart()
