@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LoginXamarin.Models
 {
-	class ContactModel
+	public class ContactModel
 	{
 		public string Nombre { get; set; }
 		public string PhoneNumber { get; set; }

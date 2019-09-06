@@ -8,8 +8,8 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
             <Label Text="Please provide the following info to add a contact" TextColor="Black" FontAttributes="Bold"></Label>
-            <Entry Placeholder="Name" Text="{Binding contact.Nombre}"></Entry>
-            <Entry Placeholder="Phone Number" Keyboard="Telephone" Text="{Binding contact.PhoneNumber}"></Entry>
+            <Entry Placeholder="Name" Text="{Binding Contact.Nombre}"></Entry>
+            <Entry Placeholder="Phone Number" Keyboard="Telephone" Text="{Binding Contact.PhoneNumber}"></Entry>
             <Button Text="Agregar Contacto" Command="{Binding AddCommand}" BackgroundColor="DarkBlue" TextColor="White"></Button>
         </StackLayout>
     </ContentPage.Content>

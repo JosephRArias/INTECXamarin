@@ -1,5 +1,6 @@
 ﻿using LoginXamarin.Models;
 using LoginXamarin.View;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,25 +10,26 @@ using Xamarin.Forms;
 
 namespace LoginXamarin.ViewModel
 {
-	class ContactViewModel
+	[AddINotifyPropertyChangedInterface]
+	public class ContactViewModel
 	{
-		ContactModel contact = new ContactModel();
+		public ContactModel Contact { get; set; }
 		public ObservableCollection<ContactModel> Contacts { get; set; } = new ObservableCollection<ContactModel>();
 		public ICommand AddCommand { get; set; }
 
 		public ContactViewModel()
 		{
-			ContactModel myContact = new ContactModel();
-			myContact.Nombre = "Fredo";
-			myContact.PhoneNumber = "8490502012";
-			Contacts.Add(myContact);
-
+			Contact = new ContactModel();
 			AddCommand = new Command(async() =>
 			{
-				string Name = contact.Nombre;
-				string Phone = contact.PhoneNumber;
-				Contacts.Add(contact);
+				string Name = Contact.Nombre;
+				string Phone = Contact.PhoneNumber;
+				Contacts.Add(Contact);
 				await App.Current.MainPage.Navigation.PushAsync(new HomePage());
+				MessagingCenter.Subscribe<AddContactPage, ContactModel>(this, Contact.Nombre, ((sender, param) =>
+				{
+
+				}));
 
 			});
 			
