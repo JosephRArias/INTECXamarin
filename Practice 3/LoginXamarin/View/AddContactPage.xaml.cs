@@ -11,24 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace LoginXamarin.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class HomePage : ContentPage
+	public partial class AddContactPage : ContentPage
 	{
-		public HomePage()
+		public AddContactPage()
 		{
 			InitializeComponent();
 			BindingContext = new ContactViewModel();
-		}
-		void Item_Tapped(object obj, EventArgs args)
-		{
-			Navigation.PushAsync(new AddContactPage());
-		}
-		void OnMore(object obj, EventArgs args)
-		{
-
-		}
-		void OnDelete(object obj, EventArgs args)
-		{
-
 		}
 	}
 }

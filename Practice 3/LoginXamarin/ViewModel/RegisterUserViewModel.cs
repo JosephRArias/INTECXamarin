@@ -5,22 +5,18 @@ using System.Text;
 using System.Windows.Input;
 using LoginXamarin.Models;
 using LoginXamarin.View;
+using PropertyChanged;
 using Xamarin.Forms;
 
 namespace LoginXamarin.ViewModel
 {
-	public class RegisterUserViewModel : INotifyPropertyChanged
+	[AddINotifyPropertyChangedInterface]
+	public class RegisterUserViewModel
 	{
 		public RegisterUserModel userModel { get; set; }
 		public string cpassword { get; set; }
 		public ICommand SaveCommand { get; set; }
 		public string ErrorIdentified { get; set; }
-		public event PropertyChangedEventHandler PropertyChanged;
-
-		void OnPropertyChaged(string ErrorIdentified)
-		{
- 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(ErrorIdentified));
-		}
 		public RegisterUserViewModel()
 		{
 			userModel = new RegisterUserModel();
@@ -31,16 +27,14 @@ namespace LoginXamarin.ViewModel
 				if(string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(cpassword))
 				{
 					ErrorIdentified = "Hay uno o mas campos vacios. Por favor llene todos.";
-					OnPropertyChaged(nameof(ErrorIdentified));
 				}
 				else if (password != cpassword)
 				{
 					ErrorIdentified = "The passwords do not match";
-					OnPropertyChaged(nameof(ErrorIdentified));
 				}
 				else
 				{
-					await App.Current.MainPage.Navigation.PushAsync(new LoginPage());
+					await App.Current.MainPage.Navigation.PushAsync(new HomePage());
 				}
 			});
 		}

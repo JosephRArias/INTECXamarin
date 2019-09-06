@@ -1,5 +1,6 @@
 ﻿using LoginXamarin.Models;
 using LoginXamarin.View;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,17 +10,12 @@ using Xamarin.Forms;
 
 namespace LoginXamarin.ViewModel
 {
-	public class LoginUserViewModel : INotifyPropertyChanged
+	[AddINotifyPropertyChangedInterface]
+	public class LoginUserViewModel 
 	{
 		public RegisterUserModel userModel { get; set; }
 		public ICommand SaveCommand { get; set; }
 		public string ErrorIdentified { get; set; }
-		public event PropertyChangedEventHandler PropertyChanged;
-
-		void OnPropertyChaged(string ErrorIdentified)
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(ErrorIdentified));
-		}
 		public LoginUserViewModel()
 		{
 			userModel = new RegisterUserModel();
@@ -30,7 +26,6 @@ namespace LoginXamarin.ViewModel
 				if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
 				{
 					ErrorIdentified = "Hay uno o mas campos vacios. Por favor llene todos.";
-					OnPropertyChaged(nameof(ErrorIdentified));
 				}
 				else
 				{
