@@ -7,7 +7,7 @@
              x:Class="LoginXamarin.View.HomePage">
   <!--Pages can be added as references or inline-->
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="ADD" Order="Primary" Clicked="Item_Tapped"></ToolbarItem>
+        <ToolbarItem Name="ADD" Order="Primary" Command="{Binding AddCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ListView ItemsSource="{Binding Contacts}"
@@ -18,8 +18,8 @@
                               TextColor="Black"
                               Detail="{Binding PhoneNumber}">
                         <TextCell.ContextActions>
-                            <MenuItem Clicked="OnMore" Command="{Binding Path=BindingContext.MoreInfoCommand, Source={x:Reference listv}}" Text="More"></MenuItem>
-                            <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete"></MenuItem>
+                            <MenuItem Text="More"></MenuItem>
+                            <MenuItem Text="Delete"></MenuItem>
                         </TextCell.ContextActions>
                     </TextCell>
                 </DataTemplate>

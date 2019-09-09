@@ -29,7 +29,7 @@ namespace LoginXamarin.ViewModel
 				}
 				else
 				{
-					await App.Current.MainPage.Navigation.PushAsync(new HomePage());
+					await App.Current.MainPage.Navigation.PushAsync(new HomePage(null));
 				}
 			});
 		}

@@ -14,23 +14,15 @@ namespace LoginXamarin.ViewModel
 	public class ContactViewModel
 	{
 		public ContactModel Contact { get; set; }
-		public ObservableCollection<ContactModel> Contacts { get; set; } = new ObservableCollection<ContactModel>();
-		public ICommand AddCommand { get; set; }
+		public ICommand CreateNewContactCommand { get; set; }
 
-		public ContactViewModel()
+		public ContactViewModel(ContactModel contact)
 		{
-			Contact = new ContactModel();
-			AddCommand = new Command(async() =>
+			Contact = contact;
+			CreateNewContactCommand = new Command(async() =>
 			{
-				string Name = Contact.Nombre;
-				string Phone = Contact.PhoneNumber;
-				Contacts.Add(Contact);
-				await App.Current.MainPage.Navigation.PushAsync(new HomePage());
-				MessagingCenter.Subscribe<AddContactPage, ContactModel>(this, Contact.Nombre, ((sender, param) =>
-				{
-
-				}));
-
+				MessagingCenter.Send<ContactViewModel, ContactModel>(this, "ContactBeingAdded", Contact);
+				await App.Current.MainPage.Navigation.PopAsync();
 			});
 			
 		}

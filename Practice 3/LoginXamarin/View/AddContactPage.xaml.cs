@@ -1,4 +1,5 @@
-﻿using LoginXamarin.ViewModel;
+﻿using LoginXamarin.Models;
+using LoginXamarin.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,10 @@ namespace LoginXamarin.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddContactPage : ContentPage
 	{
-		public AddContactPage()
+		public AddContactPage(ContactModel contact)
 		{
 			InitializeComponent();
-			BindingContext = new ContactViewModel();
+			BindingContext = new ContactViewModel(contact);
 		}
 	}
 }
