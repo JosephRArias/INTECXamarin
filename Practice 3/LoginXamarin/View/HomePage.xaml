@@ -11,15 +11,19 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ListView ItemsSource="{Binding Contacts}"
-                  x:Name="listv">
+                  x:Name="ContactList">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Nombre}"
                               TextColor="Black"
                               Detail="{Binding PhoneNumber}">
                         <TextCell.ContextActions>
-                            <MenuItem Text="More"></MenuItem>
-                            <MenuItem Text="Delete"></MenuItem>
+                            <MenuItem Text="More" 
+                                      Command="{Binding Path=BindingContext.SeeMoreCommand, Source={x:Reference Name=ContactList}}"
+                                      CommandParameter="{Binding .}"></MenuItem>
+                            <MenuItem Text="Delete"
+                                      Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference Name=ContactList}}"
+                                      CommandParameter="{Binding .}"></MenuItem>
                         </TextCell.ContextActions>
                     </TextCell>
                 </DataTemplate>
