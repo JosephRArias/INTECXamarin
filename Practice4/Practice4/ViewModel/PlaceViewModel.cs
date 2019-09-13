@@ -1,6 +1,7 @@
 ﻿using Practice4.Models;
 using Practice4.Services;
 using Practice4.Views;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,13 +11,14 @@ using Xamarin.Forms;
 
 namespace Practice4.ViewModel
 {
+	[AddINotifyPropertyChangedInterface]
 	public class PlaceViewModel
 	{
 		IApiServices apiService = new ApiService();
 		
 		public ICommand GetDataCommand { get; set; }
 
-		string PlaceName { get; set; }
+		public string PlaceName { get; set; }
 
 		PlaceModel placeModel { get; set; }
 
@@ -29,7 +31,6 @@ namespace Practice4.ViewModel
 				{
 					var CandidateData = await apiService.GetPlace(PlaceName);
 					placeModel = CandidateData;
-					await App.Current.MainPage.Navigation.PushAsync(new PlacePage());
 					
 				}
 				else

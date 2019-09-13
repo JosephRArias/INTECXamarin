@@ -13,6 +13,23 @@
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand"
            Command="{Binding GetDataCommand}"/>
+        <ListView ItemsSource="{Binding placeModel.Candidates}"
+                      x:Name="listv"
+                      >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="CenterAndExpand"
+                                         >
+                            <Label Text="{Binding Name}"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>
