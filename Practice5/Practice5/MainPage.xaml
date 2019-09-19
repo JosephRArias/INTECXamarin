@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls ="clr-namespace:Practice5.Controls"
+             xmlns:effects ="clr-namespace:Practice5.Effects"
+             mc:Ignorable="d"
+             x:Class="Practice5.MainPage">
+
+    <StackLayout
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand">
+        <!-- Place new controls here -->
+        <Button Text="See Device Orientation" 
+           Command="{Binding GetDeviceOrientationCommand}"/>
+        <Label Text="Hello, Custom Renderer !"></Label>
+        <controls:CustomEntry Text="In Shared Code"></controls:CustomEntry>
+        <Entry Text="Effect Attached to an Entry">
+            <Entry.Effects>
+                <effects:EntryEffect></effects:EntryEffect>
+            </Entry.Effects>
+        </Entry>
+    </StackLayout>
+
+</ContentPage>
