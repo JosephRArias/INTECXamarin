@@ -19,6 +19,7 @@ namespace PaintExtraPoints
 		private Dictionary<long, SKPath> temporaryPaths = new Dictionary<long, SKPath>();
 		private List<SKPath> paths = new List<SKPath>();
 		private SKPaint stroke = new SKPaint();
+		private SKCanvas canvas { get; set; }
 		public MainPage()
 		{
 			InitializeComponent();
@@ -74,8 +75,7 @@ namespace PaintExtraPoints
 
 		private void Button_Clicked_1(object sender, EventArgs e)
 		{
-			var element = (SKPaintSurfaceEventArgs)e;
-			element.Surface.Canvas.Clear(SKColors.Bisque);
+			canvas.Clear();
 		}
 	}
 }
