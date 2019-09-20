@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             mc:Ignorable="d"
+             x:Class="PaintExtraPoints.MainPage">
+    <!-- Place new controls here -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button BackgroundColor="Red"
+                Clicked="Button_Clicked"></Button>
+        <Button BackgroundColor="Blue"
+                Grid.Column="1"
+                Clicked="Button_Clicked"></Button>
+        <Button BackgroundColor="Yellow"
+                Grid.Column="2"
+                Clicked="Button_Clicked"></Button>
+        <Button BackgroundColor="Green"
+                Grid.Row="1"
+                Clicked="Button_Clicked"></Button>
+        <Button BackgroundColor="Gray"
+                Grid.Row="1"
+                Grid.Column="1"
+                Clicked="Button_Clicked"></Button>
+        <Button BackgroundColor="LightBlue"
+                Grid.Row="1"
+                Grid.Column="2"
+                Clicked="Button_Clicked"></Button>
+        <Button BackgroundColor="White"
+                Grid.Row="2"
+                Grid.Column="1"
+                Clicked="Button_Clicked_1"
+                Text="Clear"></Button>
+        <views:SKCanvasView x:Name="PaintSample"
+                            PaintSurface="PaintSample_PaintSurface"
+                            EnableTouchEvents="True"
+                            Touch="OnTouch"
+                            Grid.ColumnSpan="3"
+                            Grid.RowSpan="3">
+        </views:SKCanvasView>
+    </Grid>
+ 
+
+</ContentPage>
