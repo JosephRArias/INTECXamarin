@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:static="clr-namespace:Practice7.Models"
+             mc:Ignorable="d"
+             x:Class="Practice7.Views.UserWelcomePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Source={x:Static static:StaticUserModel.Name}}"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"></Label>
+            <Label Text="Hello, I'm Pedro &#10; Nice to meet you"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"></Label>
+            <Entry Placeholder="Enter your name here"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry"
+                             Property="IsFocused" Value="True">
+                        <Setter Property="BackgroundColor" Value="AliceBlue"></Setter>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+            <Label Text="{Binding user.Name, StringFormat='Hello {0}'}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
